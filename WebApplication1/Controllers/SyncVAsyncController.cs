@@ -13,7 +13,7 @@ namespace WebApplication1.Controllers
         private readonly string _connectionString;
         public SyncVAsyncController()
         {
-            _connectionString = "Data Source=.;Initial Catalog=BlogDb;Integrated Security=true;";
+            _connectionString = "Data Source=.;Initial Catalog=BlogDb;User ID=BlogDbUser;Password=BlogDbUser;TrustServerCertificate=True;MultipleActiveResultSets=true";
         }
 
         [HttpGet("sync")]
@@ -31,8 +31,6 @@ namespace WebApplication1.Controllers
             await MethodAsync();
             await MethodAsync();
 
-            await Log();
-
             return Ok(GetThreadInfo());
         }
 
@@ -44,8 +42,6 @@ namespace WebApplication1.Controllers
 
             await task1;
             await task2;
-
-            await Log();
 
             return Ok(GetThreadInfo());
         }
@@ -64,19 +60,6 @@ namespace WebApplication1.Controllers
             {
                 await connection.ExecuteAsync("WAITFOR DELAY '00:00:02';");
             }
-        }
-
-        private async Task Log()
-        {
-            //const string logPath = @"C:\Temp\threadlog.txt";
-
-            //ThreadPool.GetAvailableThreads(out int availableWorkerThreads, out int availableAsyncIOThreads);
-
-            //string text = $"Worker: {availableWorkerThreads}, IO: {availableAsyncIOThreads}, time: {DateTime.Now}";
-
-            //await System.IO.File.AppendAllLinesAsync(logPath, new string[] { text });
-
-            await Task.FromResult(0);
         }
 
         private dynamic GetThreadInfo()
