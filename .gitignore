@@ -12,8 +12,6 @@ packages
 .fake
 
 src/logs/*
-
-**/*.sln*
 bin
 obj
 _ReSharper*
