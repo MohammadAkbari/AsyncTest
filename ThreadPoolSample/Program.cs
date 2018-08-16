@@ -15,7 +15,7 @@ namespace ThreadPoolSample
             Console.WriteLine("No.of processors: " + logicalProcessorCount);
             Console.WriteLine("Minimum no.of Worker threads: " + minimumWorkerThreadCount);
             Console.WriteLine("Minimum no.of IOCP threads: " + minimumIOCThreadCount);
-            Console.WriteLine("Maximum no.of Worker threads: " + maximumWorkerThreadCount);
+            Console.WriteLine("Maximum num of Worker threads: " + maximumWorkerThreadCount);
             Console.WriteLine("Maximum number of IOCP threads: " + maximumIOCThreadCount);
             Console.Read();
 
