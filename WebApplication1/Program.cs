@@ -9,8 +9,8 @@ namespace WebApplication1
     {
         public static void Main(string[] args)
         {
-            int processorCounter = Environment.ProcessorCount;
-            bool success = ThreadPool.SetMaxThreads(processorCounter, processorCounter);
+            //int processorCounter = Environment.ProcessorCount;
+            //bool success = ThreadPool.SetMaxThreads(processorCounter, processorCounter);
 
             CreateWebHostBuilder(args).Build().Run();
         }
